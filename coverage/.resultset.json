@@ -1,7 +1,32 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/kirankukar/Projects/GroupProjects/MakersBNB/MakersBNB5/spec/features/list_spaces_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/kirankukar/Projects/GroupProjects/MakersBNB/MakersBNB5/spec/features/testing_infrastructure_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      }
     },
-    "timestamp": 1642431703
+    "timestamp": 1642438545
   }
 }
