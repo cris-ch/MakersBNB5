@@ -12,7 +12,7 @@ class Space
     result.map { |space| space['name']}
   end 
 
-  def self.create(url:)
+  def self.create(name:)
     if ENV['RACK_ENV'] == 'test'
       con = PG.connect :dbname => 'makersbnb_test'
     else
