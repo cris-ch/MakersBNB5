@@ -8,10 +8,12 @@ We are creating a web app that allows users to list their BnB spaces for rent an
 To set up the production database:
 1. Create database named 'makersbnb'
 2. Run query in 01_create_space_table.sql
+3. Run query in 02_add_date_columns.sql
 
 To set up the test database:
 1. Create database named 'makersbnb_test'
 2. Run query in 01_create_space_table.sql
+3. Run query in 02_add_date_columns.sql
  
 **User Specifications:**
 
