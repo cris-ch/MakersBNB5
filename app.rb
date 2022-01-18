@@ -6,6 +6,7 @@ require 'sinatra/flash'
 class MakersBnB < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
+    also_reload './lib/space'
   end
 
   get ('/') do
@@ -18,6 +19,7 @@ class MakersBnB < Sinatra::Base
 
   get ('/spaces/list') do
     @spaces = Space.all
+
     erb :'spaces/list'
   end
 

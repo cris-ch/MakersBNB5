@@ -2,18 +2,19 @@
   "RSpec": {
     "coverage": {
       "/Volumes/GoogleDrive-113727211316268977729/Mi unidad/Makers/PROJECTS/MakersBNB5/spec/features/list_spaces_spec.rb": {
-        "lines": [
+      "lines": [
           1,
           1,
+          1,
+
+          1,
+          1,
+          1,
+          1,
+          null,
           1,
           null,
           1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
           1,
           null,
           null,
@@ -78,6 +79,8 @@
         ]
       }
     },
+
     "timestamp": 1642523449
+
   }
 }
