@@ -1,7 +1,7 @@
 <ul>
   <% @name.each do |name| %>
     <li>
-      <%= name %>
+      <%= name.name %>, <%= name.date_from %>, <%= name.date_to %>
     </li>
   <% end %>
 </ul>
