@@ -1,36 +1,39 @@
 {
   "RSpec": {
     "coverage": {
-
-      "/Volumes/GoogleDrive-113727211316268977729/Mi unidad/Makers/PROJECTS/MakersBNB5/spec/space_spec.rb": {
+      "/Volumes/GoogleDrive-113727211316268977729/Mi unidad/Makers/PROJECTS/MakersBNB5/spec/features/list_spaces_spec.rb": {
         "lines": [
           1,
-          null,
-          1,
-          1,
-       
           1,
           1,
           null,
           1,
           1,
-          null,
-          1,
-          null,
-
           1,
           1,
           null,
+          1,
+          null,
+          1,
           null,
           null,
           null
         ]
       },
-1,
-
-      "/Volumes/GoogleDrive-113727211316268977729/Mi unidad/Makers/PROJECTS/MakersBNB5/lib/space.rb": {
+      "/Volumes/GoogleDrive-113727211316268977729/Mi unidad/Makers/PROJECTS/MakersBNB5/spec/features/testing_infrastructure_spec.rb": {
         "lines": [
           1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Volumes/GoogleDrive-113727211316268977729/Mi unidad/Makers/PROJECTS/MakersBNB5/spec/space_spec.rb": {
+        "lines": [
+          1,
+          1,
           null,
           1,
           null,
@@ -38,27 +41,43 @@
           1,
           1,
           null,
-
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Volumes/GoogleDrive-113727211316268977729/Mi unidad/Makers/PROJECTS/MakersBNB5/spec/database_helper.rb": {
+        "lines": [
+          1,
           0,
-          null,
-          1,
-          3,
-          null,
-          null,
-          1,
           0,
           0,
-          null,
-          0,
-          null,
-          null,
-          0,
-          null,
           null
         ]
       }
     },
-
-    "timestamp": 1642439164
+    "timestamp": 1642523449
   }
 }

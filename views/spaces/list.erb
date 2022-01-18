@@ -1,1 +1,7 @@
-<h1> <%= @name %> </h1>
+<% @spaces.each do |space| %>
+  <p>
+  Name: <%= space.name %>
+  Short description: <%= space.short_description %>
+  Price: <%= space.price %>
+  </p>
+<% end %>
