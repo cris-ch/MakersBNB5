@@ -3,6 +3,16 @@
 We are creating a web app that allows users to list their BnB spaces for rent and to hire BnB spaces for the night.
 ----
 
+# Setting up databases and tables
+
+To set up the production database:
+1. Create database named 'makersbnb'
+2. Run query in 01_create_space_table.sql
+
+To set up the test database:
+1. Create database named 'makersbnb_test'
+2. Run query in 01_create_space_table.sql
+ 
 **User Specifications:**
 
 * Any signed-up user can list a new space.

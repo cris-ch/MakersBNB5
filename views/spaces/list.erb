@@ -1,1 +1,7 @@
-<h1> <%= @name %> </h1>
+<ul>
+  <% @name.each do |name| %>
+    <li>
+      <%= name %>
+    </li>
+  <% end %>
+</ul>

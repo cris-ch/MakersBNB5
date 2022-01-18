@@ -1,11 +1,15 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require './lib/space'
 
 class MakersBnB < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
+    also_reload './lib/space'
   end
+
   enable :sessions
+
   get ('/') do
     'Welcome to Makers BnB'
   end
@@ -15,14 +19,12 @@ class MakersBnB < Sinatra::Base
   end
 
   get ('/spaces/list') do
-    @name = session[:rental_name]
+    @name = Space.all
     erb :'spaces/list'
   end
 
   post ('/spaces') do
-   
-    session[:rental_name] = params['name']
-    
+    Space.create(name: params['name'])
     redirect ('/spaces/list')
   end
 

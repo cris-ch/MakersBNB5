@@ -1,14 +1,37 @@
 {
   "RSpec": {
     "coverage": {
-
-      "/Volumes/GoogleDrive-113727211316268977729/Mi unidad/Makers/PROJECTS/MakersBNB5/spec/space_spec.rb": {
+      "/Users/kirankukar/Projects/GroupProjects/MakersBNB/MakersBNB5/spec/features/list_spaces_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/kirankukar/Projects/GroupProjects/MakersBNB/MakersBNB5/spec/features/testing_infrastructure_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/kirankukar/Projects/GroupProjects/MakersBNB/MakersBNB5/spec/space_spec.rb": {
         "lines": [
           1,
           null,
           1,
           1,
-       
           1,
           1,
           null,
@@ -17,7 +40,6 @@
           null,
           1,
           null,
-
           1,
           1,
           null,
@@ -26,9 +48,7 @@
           null
         ]
       },
-1,
-
-      "/Volumes/GoogleDrive-113727211316268977729/Mi unidad/Makers/PROJECTS/MakersBNB5/lib/space.rb": {
+      "/Users/kirankukar/Projects/GroupProjects/MakersBNB/MakersBNB5/lib/space.rb": {
         "lines": [
           1,
           null,
@@ -38,7 +58,6 @@
           1,
           1,
           null,
-
           0,
           null,
           1,
@@ -58,7 +77,6 @@
         ]
       }
     },
-
-    "timestamp": 1642439164
+    "timestamp": 1642507101
   }
 }
