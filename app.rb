@@ -26,7 +26,7 @@ class MakersBnB < Sinatra::Base
   post ('/spaces') do
     #Next code is currently not working, needs work
     #flash[:notice] = "Your space info is NOT complete!" unless 
-    Space.create(name: params[:name], short_description: params[:short_description], price: params[:price])
+    Space.create(name: params[:name], short_description: params[:short_description], price: params[:price], date_from: params['date_from'], date_to: params['date_to'])
     redirect ('/spaces/list')
   end
 
