@@ -1,14 +1,13 @@
 require 'sinatra'
 require 'sinatra/reloader'
-require './lib/space'
+require_relative 'lib/space'
+require 'sinatra/flash'
 
 class MakersBnB < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
     also_reload './lib/space'
   end
-
-  enable :sessions
 
   get ('/') do
     'Welcome to Makers BnB'
@@ -19,12 +18,15 @@ class MakersBnB < Sinatra::Base
   end
 
   get ('/spaces/list') do
-    @name = Space.all
+    @spaces = Space.all
+
     erb :'spaces/list'
   end
 
   post ('/spaces') do
-    Space.create(name: params['name'])
+    #Next code is currently not working, needs work
+    #flash[:notice] = "Your space info is NOT complete!" unless 
+    Space.create(name: params[:name], short_description: params[:short_description], price: params[:price])
     redirect ('/spaces/list')
   end
 
