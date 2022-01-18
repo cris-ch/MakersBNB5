@@ -1,7 +1,13 @@
-<ul>
-  <% @name.each do |name| %>
-    <li>
-      <%= name.name %>, <%= name.date_from %>, <%= name.date_to %>
-    </li>
-  <% end %>
-</ul>
+
+<% @spaces.each do |space| %>
+  <p>
+  Name: <%= space.name %>
+  Short description: <%= space.short_description %>
+  Price: <%= space.price %>
+  Date From: <%= space.date_from %>
+  Date To: <%= space.date_to %>
+  
+  </p>
+<% end %>
+
+    
