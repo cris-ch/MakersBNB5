@@ -1,6 +1,13 @@
 require 'pg'
 
 class Space
+  attr_reader :name, :date_from, :date_to
+
+  def initialize(name:, date_from:, date_to:)
+    @name = name
+    @date_from = date_from
+    @date_to = date_to
+  end
 
   def self.all
     if ENV['RACK_ENV'] == 'test'
@@ -9,10 +16,9 @@ class Space
       con = PG.connect :dbname => 'makersbnb'
     end
     result = con.exec "SELECT * FROM spaces"
-    name = result.map { |space| space['name']}
-    date_from = result.map { |space| space['date_from']}
-    date_to = result.map { |space| space['date_to']}
-    all_spaces = name + date_from + date_to
+    result.map do |space|
+      Space.new(name: space['name'], date_from: space['date_from'], date_to: space['date_to'])
+    end
   end 
 
   def self.create(name:, date_from:, date_to:)
