@@ -30,7 +30,7 @@ describe Space do
 
  describe 'description and price' do 
     it 'adds a new space' do
-      test_space = Space.create(name: 'London House', date_from:, date_to:, short_description: 'Beautiful House', price: '150')
+      test_space = Space.create(name: 'London House', date_from: 'date', date_to: 'date', short_description: 'Beautiful House', price: '150')
       result = Space.all
       #data = persisted_data(id: test_space.id)
       #expect(test_space.id).to eq persisted_data[id]
@@ -39,5 +39,4 @@ describe Space do
       expect(result.first.price).to eq '$150.00'  
     end
   end
-
 end

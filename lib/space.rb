@@ -1,19 +1,13 @@
 require 'pg'
 
 class Space
-  attr_reader :name, :date_from, :date_to
+  attr_reader :name, :date_from, :date_to, :id, :short_description, :price
 
-  def initialize(name:, date_from:, date_to:)
+  def initialize(id:, name:, date_from:, date_to:, short_description:, price:)
+    @id = id
     @name = name
     @date_from = date_from
     @date_to = date_to
-  end
-
-  attr_reader :id, :name, :short_description, :price
-
-  def initialize(id:, name:, short_description:, price:)
-    @id = id
-    @name = name
     @short_description = short_description
     @price = price
   end
