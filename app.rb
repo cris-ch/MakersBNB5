@@ -13,6 +13,10 @@ class MakersBnB < Sinatra::Base
     'Welcome to Makers BnB'
   end
 
+  get ('/users/new') do
+    erb :'users/new'
+  end
+
   get ('/spaces/new') do
     erb :'spaces/new'
   end
@@ -21,6 +25,11 @@ class MakersBnB < Sinatra::Base
     @spaces = Space.all
 
     erb :'spaces/list'
+  end
+
+  post ('users') do
+    # takes the users info params and does stuff
+    redirect ('/spaces/list')
   end
 
   post ('/spaces') do
