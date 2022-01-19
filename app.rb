@@ -1,11 +1,13 @@
 require 'sinatra'
 require 'sinatra/reloader'
-require_relative 'lib/space'
+require_relative './lib/space'
+require_relative './lib/user'
 require 'sinatra/flash'
 
 class MakersBnB < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
+    also_reload './lib/space'
     also_reload './lib/space'
   end
 
@@ -24,13 +26,13 @@ class MakersBnB < Sinatra::Base
   end
 
   get ('/spaces/list') do
-    @user = User.find(session[:user_email])
+    @user = User.find(email: session[:user_email])
     @spaces = Space.all
     erb :'spaces/list'
   end
 
-  post ('users') do
-    user = User.create(name: params[:name], email: params[:email], password: params[:password])
+  post ('/users') do
+    user = User.create(name: params['name'], email: params['email'], password: params['password'])
     session[:user_email] = user.email
     redirect ('/spaces/list')
   end
