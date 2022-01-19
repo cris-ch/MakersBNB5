@@ -10,7 +10,7 @@ class Booking
       @stay_date = stay_date
     end
 
-    def self.all(property_name:, stay_date:)
+    def self.all()
         if ENV['RACK_ENV'] == 'test'
             con = PG.connect :dbname => 'makersbnb_test'
         else
