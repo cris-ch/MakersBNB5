@@ -11,13 +11,13 @@ gem 'capybara'
 gem 'rspec'
 gem 'pg'
 gem 'flash'
-gem 'puma'
 gem 'sinatra-flash'
 
 group :test do
-  gem 'simplecov', require: false
+  gem 'simplecov', '~> 0.12.0'
   gem 'simplecov-console', require: false
 end
+
 
 group :development, :test do
   gem 'rubocop', '1.20'
