@@ -9,6 +9,8 @@ class MakersBnB < Sinatra::Base
     also_reload './lib/space'
   end
 
+  enable :sessions
+
   get ('/') do
     'Welcome to Makers BnB'
   end
@@ -22,13 +24,14 @@ class MakersBnB < Sinatra::Base
   end
 
   get ('/spaces/list') do
+    @user = User.find(session[:user_email])
     @spaces = Space.all
-
     erb :'spaces/list'
   end
 
   post ('users') do
-    User.create(name: params[:name], email: params[:email], password: params[:password])
+    user = User.create(name: params[:name], email: params[:email], password: params[:password])
+    session[:user_email] = user.email
     redirect ('/spaces/list')
   end
 
