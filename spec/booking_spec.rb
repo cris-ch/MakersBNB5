@@ -5,15 +5,9 @@ require 'booking'
     it 'returns the dates available for booking' do
         connection = PG.connect(dbname: 'makersbnb_test')
         connection.exec("INSERT INTO booking (property_name, stay_date) VALUES ('San Francisco Apartment','18-12-22');")
-<<<<<<< HEAD
         booking = Booking.all
-        expect(spaces.first.property_name).to eq 'San Francisco Apartment'
-        expect(spaces.first.stay_date).to eq '18-12-22'
-=======
-        booking = Booking.all()
         expect(booking.first.property_name).to eq 'San Francisco Apartment'
         expect(booking.first.stay_date).to eq '18-12-22'
->>>>>>> d6c0dbbf8d4f320ceb39ce13e9d8d9012c331d44
     end
 
 

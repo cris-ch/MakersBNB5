@@ -1,3 +1,7 @@
 
-<h1>Your booking request for <%= @booking_request %> has been made. Please wait to hear if it has been confirmed.</h1>
+<h1>Your booking request has been made. Please wait to hear if it has been confirmed.</h1>
 
+<ul>
+    <li> <%= @booking_request.property_name %> </li>
+    <li> <%= @booking_request.stay_date %> </li>
+</ul>

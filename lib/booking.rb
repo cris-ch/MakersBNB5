@@ -10,11 +10,7 @@ class Booking
       @stay_date = stay_date
     end
 
-<<<<<<< HEAD
     def self.all
-=======
-    def self.all()
->>>>>>> d6c0dbbf8d4f320ceb39ce13e9d8d9012c331d44
         if ENV['RACK_ENV'] == 'test'
             con = PG.connect :dbname => 'makersbnb_test'
         else
@@ -34,7 +30,7 @@ class Booking
             con = PG.connect :dbname => 'makersbnb'
         end
 
-        result = con.exec("INSERT INTO booking (property_name, stay_date) VALUES('#{property_name}','#{stay_date}',)")
+        result = con.exec("INSERT INTO booking (property_name, stay_date) VALUES('#{property_name}','#{stay_date}')RETURNING BOOKING_ID, PROPERTY_NAME, STAY_DATE ")
         Booking.new(booking_id: result[0]['booking_id'], property_name: result[0]['property_name'], stay_date: result[0]['stay_date'])
     end 
 end
