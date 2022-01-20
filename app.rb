@@ -1,14 +1,17 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require_relative 'lib/booking'
 require_relative './lib/space'
 require_relative './lib/user'
 require 'sinatra/flash'
 
 class MakersBnB < Sinatra::Base
+  enable :sessions
   configure :development do
     register Sinatra::Reloader
     also_reload './lib/space'
-    also_reload './lib/space'
+    also_reload './lib/booking'
+    also_reload './lib/user'
   end
 
   enable :sessions
@@ -47,6 +50,18 @@ class MakersBnB < Sinatra::Base
     Space.create(name: params[:name], short_description: params[:short_description], price: params[:price], date_from: params['date_from'], date_to: params['date_to'])
     redirect ('/spaces/list')
   end
+
+  get ('/spaces/booking') do
+    @booking_request  =  session[:booking]
+    erb :'spaces/booking'
+  end
+
+  post ('/spaces/booking') do
+    # session[:booking] = [params['name'], params['stay_date']]
+    # session[:booking] = Booking.create(params['name'], params['stay_date'])
+    session[:booking] = Booking.create(property_name: params['name'], stay_date: params['stay_date'])
+    redirect ('/spaces/booking')
+  end 
 
   post ('/sessions') do
     user = User.authenticate(email: params[:email], password: params[:password])
