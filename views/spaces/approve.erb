@@ -1,11 +1,12 @@
 <h1> Requests to book your properties are here: </h1>
 
-<form action="spaces/approve" method="post"> 
+<ul>
+    <li> <%= @booking_request.property_name %> </li>
+    <li> <%= @booking_request.stay_date %> </li>
+</ul>
+
+<form action="/spaces/approval" method="post"> 
   <input type="submit" value="Approve">
 </form>
 
-<ul>
-  <% if @approval%>
-    <li> <%= 'You have approved this booking' %> </li>
-<% end %>
-</ul>
+
