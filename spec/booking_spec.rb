@@ -6,8 +6,8 @@ require 'booking'
         connection = PG.connect(dbname: 'makersbnb_test')
         connection.exec("INSERT INTO booking (property_name, stay_date) VALUES ('San Francisco Apartment','18-12-22');")
         booking = Booking.all
-        # expect(spaces.first.property_name).to eq 'San Francisco Apartment'
-        # expect(spaces.first.stay_date).to eq '18-12-22'
+        expect(spaces.first.property_name).to eq 'San Francisco Apartment'
+        expect(spaces.first.stay_date).to eq '18-12-22'
     end
   end 
 

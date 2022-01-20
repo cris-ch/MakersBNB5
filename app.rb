@@ -32,12 +32,13 @@ class MakersBnB < Sinatra::Base
   end
 
   get ('/spaces/booking') do
-    @name = session[:name]
+    @booking_request  =  session[:booking]
     erb :'spaces/booking'
   end
 
   post ('/spaces/booking') do
-    session[:name] = params['name']
+    session[:booking] = [params['name'], params['stay_date']]
+    # session[:booking] = Booking.create(params['name'], params['stay_date'])
     redirect ('/spaces/booking')
   end 
 

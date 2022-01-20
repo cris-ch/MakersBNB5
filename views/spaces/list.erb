@@ -6,7 +6,11 @@
   Price: <%= space.price %>
   Date From: <%= space.date_from %>
   Date To: <%= space.date_to %>
-  
+  <form action='/spaces/booking' method='post'>
+  Book this property? <input type='text' name='stay_date' placeholder='what date would you like to book?'>
+  <input type='text' name='name' value='<%= space.name %>'>
+  <input type='submit' value='Booking'>
+  </form>  
   </p>
 <% end %>
 
