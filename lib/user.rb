@@ -41,5 +41,20 @@ class User
    
     user = User.new(id: result[0]['id'], name: result[0]['name'], email: result[0]['email'])
   end
+
+  def self.authenticate(email:, password:)
+
+    if ENV['RACK_ENV'] == 'test'
+      con = PG.connect :dbname => 'makersbnb_test'
+    else
+      con = PG.connect :dbname => 'makersbnb'
+    end
+
+    result = con.query(
+      "SELECT * FROM users WHERE email = $1",
+      [email]
+    )
+    User.new(id: result[0]['id'], name: result[0]['name'], email:result[0]['email'])
+  end
 end
 

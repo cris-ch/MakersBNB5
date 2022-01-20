@@ -31,7 +31,7 @@ class MakersBnB < Sinatra::Base
     erb :'spaces/list'
   end
 
-  get ('sessions/new') do
+  get '/sessions/new' do
     erb :'sessions/new'
   end
 
@@ -49,12 +49,8 @@ class MakersBnB < Sinatra::Base
   end
 
   post ('/sessions') do
-    result = PG.connect.query(
-      "SELECT * FROM users WHERE email = $1", [params[:email]]
-    )
-    user = User.create(result[0]['name'], result[0]['email'], result[0]['password'])
-
-    session[:email] = user.email
+    user = User.authenticate(email: params[:email], password: params[:password])
+    session[:user_email] = user.email
     redirect ('/spaces/list')
   end
 
