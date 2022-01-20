@@ -71,7 +71,6 @@ class MakersBnB < Sinatra::Base
 
   get ('/spaces/approve') do
     @booking_request  =  session[:booking]
-    @approval = session[:approval] 
     erb :'spaces/approve'
   end
 
