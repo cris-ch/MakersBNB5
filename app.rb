@@ -69,6 +69,22 @@ class MakersBnB < Sinatra::Base
     redirect ('/spaces/list')
   end
 
+  get ('/spaces/approve') do
+    #session[:booking] = [params['stay_date']]
+    # we will ad booking data including, id, date, name of proprty.
+    # @booking_request  =  session[:booking]
+    @approval = session[:approval] 
+    p "===  in get ('/spaces/approve') do ======"
+    erb :'spaces/approve'
+  end
+
+  post ('spaces/approve') do
+    session[:approval] = true
+    p "========="
+    p params['decision']
+    redirect ('/spaces/approve')
+  end
+
   run if app_file == $0
 
 end
