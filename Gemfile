@@ -12,6 +12,8 @@ gem 'rspec'
 gem 'pg'
 gem 'flash'
 gem 'sinatra-flash'
+gem 'bcrypt'
+gem 'puma'
 
 group :test do
   gem 'simplecov', '~> 0.12.0'

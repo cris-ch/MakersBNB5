@@ -1,3 +1,6 @@
+<% if @user %>
+  <h2> Welcome, <%= @user.name%></h1>
+<% end %>
 
 <% @spaces.each do |space| %>
   <p>
