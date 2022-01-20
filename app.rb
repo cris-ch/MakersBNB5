@@ -31,6 +31,10 @@ class MakersBnB < Sinatra::Base
     erb :'spaces/list'
   end
 
+  get ('sessions/new') do
+    erb :'sessions/new'
+  end
+
   post ('/users') do
     user = User.create(name: params['name'], email: params['email'], password: params['password'])
     session[:user_email] = user.email
@@ -41,6 +45,16 @@ class MakersBnB < Sinatra::Base
     #Next code is currently not working, needs work
     #flash[:notice] = "Your space info is NOT complete!" unless 
     Space.create(name: params[:name], short_description: params[:short_description], price: params[:price], date_from: params['date_from'], date_to: params['date_to'])
+    redirect ('/spaces/list')
+  end
+
+  post ('/sessions') do
+    result = PG.connect.query(
+      "SELECT * FROM users WHERE email = $1", [params[:email]]
+    )
+    user = User.create(result[0]['name'], result[0]['email'], result[0]['password'])
+
+    session[:email] = user.email
     redirect ('/spaces/list')
   end
 
