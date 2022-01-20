@@ -1,20 +1,20 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require 'sinatra/flash'
 require_relative 'lib/booking'
 require_relative './lib/space'
 require_relative './lib/user'
-require 'sinatra/flash'
+
 
 class MakersBnB < Sinatra::Base
   enable :sessions
+  register Sinatra::Flash 
   configure :development do
     register Sinatra::Reloader
     also_reload './lib/space'
     also_reload './lib/booking'
     also_reload './lib/user'
   end
-
-  enable :sessions
 
   get ('/') do
     'Welcome to Makers BnB'
@@ -65,7 +65,20 @@ class MakersBnB < Sinatra::Base
 
   post ('/sessions') do
     user = User.authenticate(email: params[:email], password: params[:password])
+
+    if user
     session[:user_email] = user.email
+    redirect ('/spaces/list')
+
+    else 
+      flash[:notice] = 'Please check your email or password'
+      redirect ('/sessions/new')
+    end
+  end 
+
+  post ('/sessions/destroy') do
+    session.clear
+    flash[:notice] = "You have signed out."
     redirect ('/spaces/list')
   end
 
