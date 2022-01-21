@@ -17,7 +17,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get ('/') do
-    'Welcome to Makers BnB'
+    erb :index
   end
 
   get ('/users/new') do
@@ -41,7 +41,7 @@ class MakersBnB < Sinatra::Base
   post ('/users') do
     user = User.create(name: params['name'], email: params['email'], password: params['password'])
     session[:user_email] = user.email
-    redirect ('/spaces/list')
+    redirect ('/')
   end
 
   post ('/spaces') do
@@ -79,7 +79,7 @@ class MakersBnB < Sinatra::Base
   post ('/sessions/destroy') do
     session.clear
     flash[:notice] = "You have signed out."
-    redirect ('/spaces/list')
+    redirect ('/')
   end
 
   get ('/spaces/approve') do

@@ -1,1 +1,31 @@
-List my rentals
+<h1> Welcome to Makers BnB </h1>
+
+
+<form action='/users/new'>
+<input type='submit' value='Sign up'>
+</form>
+
+<form action='/sessions/new'>
+<input type='submit' value='Log in'>
+</form>
+
+<form action='/spaces/list'>
+<input type='submit' value='See available spaces'>
+</form>
+
+<form action='/spaces/new'>
+<input type='submit' value='Set up a space'>
+</form>
+
+<form action='/spaces/approve'>
+<input type='submit' value='Approve bookings'>
+</form>
+
+<form action="/sessions/destroy" method="post">
+  <input type="submit" value="Sign out" />
+</form>
+
+<h2> 
+  <%= flash[:notice] %>
+</h2>
+    
