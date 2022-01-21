@@ -49,7 +49,7 @@ So that I can securely manage new space
 I want to be able to log in to the BnB application
 
 
-**Future User Stories:
+**Future User Stories:**
 ----
 
 As a user 
