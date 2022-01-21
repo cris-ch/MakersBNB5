@@ -82,6 +82,20 @@ class MakersBnB < Sinatra::Base
     redirect ('/spaces/list')
   end
 
+  get ('/spaces/approve') do
+    @booking_request  =  session[:booking]
+    erb :'spaces/approve'
+  end
+
+  get ('/spaces/booking_approved') do
+    @booking_request  =  session[:booking]
+    erb :'spaces/booking_approved'
+  end
+
+  post ('/spaces/approval') do
+    redirect ('/spaces/booking_approved')
+  end
+
   run if app_file == $0
 
 end

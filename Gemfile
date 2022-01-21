@@ -14,6 +14,7 @@ gem 'flash'
 gem 'sinatra-flash'
 gem 'bcrypt'
 gem 'puma'
+gem 'fuubar'
 
 group :test do
   gem 'simplecov', '~> 0.12.0'
