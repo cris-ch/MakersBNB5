@@ -25,7 +25,7 @@ To set up the test database:
 * Nights for which a space has already been booked should not be available for users to book that space.
 * Until a user has confirmed a booking request, that space can still be booked for that night. 
 
-User Stories:
+Complete User Stories:
 ----
 
 As a user 
@@ -43,6 +43,14 @@ I want to be able to add a description (name, short description & price)
 As a user
 So that I can market my property on specific dates
 I want to be able to list dates of availability
+
+As a user
+So that I can securely manage new space
+I want to be able to log in to the BnB application
+
+
+**Future User Stories:
+----
 
 As a user 
 So that I can book somewhere to stay
